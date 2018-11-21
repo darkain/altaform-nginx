@@ -13,7 +13,7 @@ location ~ ^/(cdn|static|files)/ {
 
 
 location / {
-	include /usr/local/etc/nginx/fastcgi_params;
+	include fastcgi_params;
 	fastcgi_param SCRIPT_FILENAME /var/www/index.php;
 	fastcgi_pass $altaform:9000;
 }

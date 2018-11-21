@@ -24,4 +24,4 @@ ssl_ecdh_curve					secp384r1;
 resolver						127.0.0.1 valid=300s;
 resolver_timeout				5s;
 
-include /usr/local/etc/nginx/certbot;
+include certbot;
