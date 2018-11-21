@@ -21,6 +21,7 @@ ssl_session_tickets				off;
 ssl_ecdh_curve					secp384r1;
 
 #http://blog.zorinaq.com/nginx-resolver-vulns/
-resolver						127.0.0.1;
+resolver						127.0.0.1 valid=300s;
+resolver_timeout				5s;
 
 include /usr/local/etc/nginx/certbot;
