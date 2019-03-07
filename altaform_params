@@ -6,6 +6,13 @@ access_log off;
 error_log /dev/null;
 
 
+location ~ \.(scss)$ {
+	include fastcgi_params;
+	fastcgi_param SCRIPT_FILENAME /var/www/index.php;
+	fastcgi_pass $altaform:9000;
+}
+
+
 location ~ ^/(cdn|static|files)/ {
 	proxy_pass		http://$altaform;
 	proxy_redirect	http://$altaform	https://$host;
